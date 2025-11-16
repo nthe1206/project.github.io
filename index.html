@@ -3,59 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Yêu Cầu Tạo Trang Web Xịn</title>
+    <title>Form Yêu Cầu Thiết Kế Website Cao Cấp – AI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Form Yêu Cầu Tạo Trang Web Xịn</h1>
-            <p>Điền đầy đủ thông tin để team thiết kế hiểu rõ yêu cầu của bạn</p>
-        </header>
-        <div class="form-content">
-            <form id="webRequestForm">
-                <!-- 1. Thông tin cơ bản -->
-                <div class="section">
-                    <h2 class="section-title">1. Thông tin cơ bản</h2>
-                    <div class="grid-2">
-                        <div class="form-group">
-                            <label for="projectName" class="required">Tên dự án</label>
-                            <input type="text" id="projectName" name="projectName" required placeholder="VD: Shop Thời Trang Xịn">
-                        </div>
-                        <div class="form-group">
-                            <label for="clientName" class="required">Người yêu cầu</label>
-                            <input type="text" id="clientName" name="clientName" required placeholder="Họ và tên hoặc công ty">
-                        </div>
-                    </div>
-                    <div class="grid-2">
-                        <div class="form-group">
-                            <label for="requestDate">Ngày tạo yêu cầu</label>
-                            <input type="date" id="requestDate" name="requestDate">
-                        </div>
-                        <div class="form-group">
-                            <label for="websiteGoal" class="required">Mục tiêu website</label>
-                            <select id="websiteGoal" name="websiteGoal" required>
-                                <option value="">Chọn mục tiêu</option>
-                                <option value="product-intro">Giới thiệu sản phẩm</option>
-                                <option value="ecommerce">Web bán hàng</option>
-                                <option value="portfolio">Portfolio</option>
-                                <option value="other">Khác</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group" id="goalOther" style="display:none;">
-                        <label for="goalOtherText">Mô tả mục tiêu khác</label>
-                        <textarea id="goalOtherText" name="goalOtherText"></textarea>
-                    </div>
-                </div>
 
-                <div class="actions">
-                    <button type="button" class="btn btn-print" onclick="window.print()">In form</button>
-                    <button type="submit" class="btn">Gửi yêu cầu</button>
-                </div>
-            </form>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="lightMode" class="active">Light</button>
+        <button id="darkMode">Dark</button>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <header class="header">
+                <h1>Form Yêu Cầu Thiết Kế Website Cao Cấp</h1>
+                <p>Dành riêng cho AI – Thu thập đầy đủ yêu cầu để tạo website xịn, hiện đại, tối ưu SEO & UX</p>
+            </header>
+
+            <div class="form-content">
+                <form id="aiWebForm" novalidate>
+                    <!-- 1. THÔNG TIN CƠ BẢN -->
+                    <div class="section" data-scroll>
+                        <h2 class="section-title"><span>1. Thông tin cơ bản dự án</span></h2>
+                        
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label for="projectName">Tên website / dự án <span class="required">*</span></label>
+                                <input type="text" id="projectName" name="projectName" placeholder="VD: AI Fashion Store, Portfolio Designer" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="clientName">Người yêu cầu / công ty <span class="required">*</span></label>
+                                <input type="text" id="clientName" name="clientName" placeholder="Họ tên hoặc tên công ty" required>
+                            </div>
+                        </div>
+
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label for="requestDate">Ngày tạo yêu cầu</label>
+                                <input type="date" id="requestDate" name="requestDate">
+                            </div>
+                            <div class="form-group">
+                                <label>Mục tiêu chính <span class="required">*</span></label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="goal" value="intro"> Giới thiệu sản phẩm/dịch vụ
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="goal" value="ecommerce"> Bán hàng online / Ecommerce
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="goal" value="landing"> Landing page quảng cáo
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="goal" value="portfolio"> Portfolio / cá nhân
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="goal" value="corporate"> Doanh nghiệp / Corporate
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="goal" value="other"> Khác
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="goalOther" style="display:none;">
+                            <label for="goalOtherText">Khác: Mô tả chi tiết mục tiêu</label>
+                            <textarea id="goalOtherText" name="goalOtherText" placeholder="VD: Website AI giới thiệu công nghệ, kết hợp demo tương tác..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Other sections remain the same... -->
+
+                    <div class="actions">
+                        <button type="button" class="btn btn-outline" onclick="window.print()">Print In form</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Submit Gửi yêu cầu</button>
+                    </div>
+
+                    <div class="note">
+                        <strong>AI Note:</strong> Form này được thiết kế để AI hiểu rõ yêu cầu. Mọi thông tin sẽ được phân tích để tạo website >2000 dòng code, modular, responsive, animation mượt, SEO chuẩn, dễ mở rộng.
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
